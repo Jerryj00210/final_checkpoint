@@ -6,8 +6,18 @@
 ##### Config
 * Parameters for loading the images.
 
+##### Examples
+* Results from the Grad-CAM algorithm.
+
 ##### Notebook
-* Generating results from the Grad-CAM algorithm and explanation on the results.
+* Results from `Examples` and explanation on the results.
 
 ##### src
-* Main .py files that running `run.py` involves 
+* Main .py files including grad-cam algorithm and image processing.
+
+##### run.py
+* Load the images and generate results from the Grad-CAM algorithm.
+
+##### submission.json
+* `submission.json` contains the docker image required for running this project and a github link of this project.
+
