@@ -25,3 +25,7 @@
 1. please specify your own image input path and save image path inside the image_path.json from the Config folder.
 2. Run `python run.py --image-path <path_to_image>`. If you already specify the load image path from the json file inside the Config folder, you can simply run `python run.py --image-path <path_to_image>`.
 3. If you wish to use cuda, then run `python run.py --image-path <path_to_image> --use-cuda`. If you already specify the load image path from the json file inside the Config folder, you can simply run `python run.py --use-cuda`.
+
+##### contributions
+* Che-Wei Lin: analyzing the generated results, organizing the github repository and writing the report
+* Ting-Yang Hung: developing necessary files for the github repository and writing the report
