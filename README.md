@@ -21,3 +21,4 @@
 ##### submission.json
 * `submission.json` contains the docker image required for running this project and a github link of this project.
 
+### How to run
