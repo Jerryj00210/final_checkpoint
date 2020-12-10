@@ -4,6 +4,14 @@ import numpy as np
 import torch
 from torch.autograd import Function
 from torchvision import models
+import json
+import os
+
+with open("./config/image_path.json") as param:
+        all_info = json.load(param)
+        load_image = all_info["load_image_path"]
+        save_image = all_info["save_image_path"]
+param.close()
 
 class FeatureExtractor():
     """ Class for extracting activations and 
@@ -73,11 +81,12 @@ def preprocess_image(img):
 
 
 def show_cam_on_image(img, mask):
+    param.close()
     heatmap = cv2.applyColorMap(np.uint8(255 * mask), cv2.COLORMAP_JET)
     heatmap = np.float32(heatmap) / 255
     cam = heatmap + np.float32(img)
     cam = cam / np.max(cam)
-    cv2.imwrite("cam.jpg", np.uint8(255 * cam))
+    cv2.imwrite(save_image["cam_path"], np.uint8(255 * cam))
 
 
 class GradCam:
@@ -207,7 +216,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--use-cuda', action='store_true', default=False,
                         help='Use NVIDIA GPU acceleration')
-    parser.add_argument('--image-path', type=str, default='./examples/both.png',
+    parser.add_argument('--image-path', type=str, default= load_image["image_input_path"],
                         help='Input image path')
     args = parser.parse_args()
     args.use_cuda = args.use_cuda and torch.cuda.is_available()

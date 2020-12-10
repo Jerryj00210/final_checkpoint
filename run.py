@@ -4,6 +4,8 @@ import numpy as np
 import torch
 from torch.autograd import Function
 from torchvision import models
+from src.gradcam import *
+import json
 
 if __name__ == '__main__':
     """ python grad_cam.py <path_to_image>
@@ -12,6 +14,11 @@ if __name__ == '__main__':
     3. Makes a forward pass to find the category index with the highest score,
     and computes intermediate activations.
     Makes the visualization. """
+
+    with open("./config/image_path.json") as param:
+        all_info = json.load(param)
+        save_image = all_info["save_image_path"]
+    param.close()
 
     args = get_args()
 
@@ -41,5 +48,5 @@ if __name__ == '__main__':
     cam_gb = deprocess_image(cam_mask*gb)
     gb = deprocess_image(gb)
 
-    cv2.imwrite('gb.jpg', gb)
-    cv2.imwrite('cam_gb.jpg', cam_gb)
+    cv2.imwrite(save_image["gb_path"], gb)
+    cv2.imwrite(save_image["cam_gb_path"], cam_gb)

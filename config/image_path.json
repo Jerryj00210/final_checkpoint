@@ -1,0 +1,8 @@
+{"load_image_path":{
+    "image_input_path": "/datasets/COCO-2017/val2017/000000000139.jpg"},
+"save_image_path": {
+    "gb_path": "./gb.jpg",
+    "cam_gb_path":  "./cam_gb.jpg",
+    "cam_path": "./cam.jpg"
+    }
+}
