@@ -1,7 +1,7 @@
 # final_checkpoint
 
 ### Introduction
-* This project implements a Grad-CAM algorithm and use it on the COCO dataset. The model that we use is a pre-trained model called Resnet50, which is pretrained with ImageNet. The model will take COCO dataset as input and Grad-CAM will visualize it.
+* This project implements a Grad-CAM algorithm and use it on the COCO dataset. The model that we use is a pre-trained model called Resnet50, which is pretrained with ImageNet. The model will take COCO dataset as input and Grad-CAM will visualize it. The Grad-CAM algorithm will generate a heatmap that shows the decision making process of the model. The region with high color intensity from the heatmap indicates that the model puts more emphasis on that region when attempting to make a prediction. The heatmap is overlaid with the original image so that the important region that the model "looks" at is highlighted with color. 
 
 ##### Config
 * Parameters for specifing the path to load image as input and the path to save image as output.
