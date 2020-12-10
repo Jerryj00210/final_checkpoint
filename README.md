@@ -24,4 +24,4 @@
 ### How to run
 1. please specify your own image input path and save image path inside the image_path.json from the Config folder.
 2. Run `python gradcam.py --image-path <path_to_image>`. If you already specify the load image path from the json file inside the Config folder, you can simply run `python gradcam.py --image-path <path_to_image>`.
-3. If you wish to use xuda, then run `python gradcam.py --image-path <path_to_image> --use-cuda`. If you already specify the load image path from the json file inside the Config folder, you can simply run `python gradcam.py --use-cuda`.
+3. If you wish to use cuda, then run `python gradcam.py --image-path <path_to_image> --use-cuda`. If you already specify the load image path from the json file inside the Config folder, you can simply run `python gradcam.py --use-cuda`.
